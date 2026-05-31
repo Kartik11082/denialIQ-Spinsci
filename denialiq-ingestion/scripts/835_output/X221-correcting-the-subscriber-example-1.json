@@ -1,0 +1,40 @@
+{
+  "source_file": "X221-correcting-the-subscriber-example-1.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "ANY PLAN USA",
+  "provider_name": "PROVIDER",
+  "patient_name": "MASTERS MARVIN",
+  "payment_info": {
+    "total_payment": "120.03",
+    "payment_method": "CHK",
+    "transaction_date": "20190816"
+  },
+  "claims": [
+    {
+      "claim_id": "04777796TLC777122",
+      "status_code": "1",
+      "total_charge": "155",
+      "amount_paid": "120.03",
+      "patient_name": "MASTERS MARVIN",
+      "provider_name": "SHELTON MD BLAKE",
+      "date_of_service": "20181119",
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|99393",
+          "charge_amount": "155",
+          "paid_amount": "120.03",
+          "date_of_service": "20181114",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "34.97"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

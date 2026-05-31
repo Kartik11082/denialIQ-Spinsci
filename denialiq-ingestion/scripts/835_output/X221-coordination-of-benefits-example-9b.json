@@ -1,0 +1,40 @@
+{
+  "source_file": "X221-coordination-of-benefits-example-9b.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "DELTA DENTAL OF ABC",
+  "provider_name": "BAN DDS LLC",
+  "patient_name": "TOWNSEND WILLIAM",
+  "payment_info": {
+    "total_payment": "100.00",
+    "payment_method": "CHK",
+    "transaction_date": "20190331"
+  },
+  "claims": [
+    {
+      "claim_id": "EXAMPLE9",
+      "status_code": "3",
+      "total_charge": "500",
+      "amount_paid": "100",
+      "patient_name": "TOWNSEND WILLIAM",
+      "provider_name": "ACME MEDICAL CENTER",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|99213",
+          "charge_amount": "500",
+          "paid_amount": "100",
+          "date_of_service": "20191001",
+          "adjustments": [
+            {
+              "group": "OA",
+              "reason_code": "23",
+              "amount": "400"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

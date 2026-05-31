@@ -1,0 +1,80 @@
+{
+  "source_file": "X222-home-infusion-therapy-pharmacy-(adjudicated-with-HCPCS-in-loop-2400-or-NDC-in-loop-2410).edi",
+  "billing_provider": {
+    "name": "Professional Home IV, LLC",
+    "npi": "1234567893"
+  },
+  "subscriber": {
+    "name": "Steve Smith",
+    "id": "MBRID01234"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "CLMNO12345",
+      "total_billed_amount": "2232.93",
+      "place_of_service": "12",
+      "diagnoses": [
+        "4659"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "S9500",
+          "modifiers": [],
+          "line_charge": "1400.00",
+          "units": "7"
+        },
+        {
+          "procedure_code": "J0696",
+          "modifiers": [],
+          "line_charge": "682.50",
+          "units": "56"
+        },
+        {
+          "procedure_code": "J7051",
+          "modifiers": [],
+          "line_charge": "15.12",
+          "units": "28"
+        },
+        {
+          "procedure_code": "J3490",
+          "modifiers": [
+            "",
+            "",
+            "",
+            "",
+            "Sod Chl 0.9% see NDC#"
+          ],
+          "line_charge": "67.69",
+          "units": "7"
+        },
+        {
+          "procedure_code": "J3490",
+          "modifiers": [
+            "",
+            "",
+            "",
+            "",
+            "Sod Chl 0.9% see NDC#"
+          ],
+          "line_charge": "57.12",
+          "units": "14"
+        },
+        {
+          "procedure_code": "J3490",
+          "modifiers": [
+            "",
+            "",
+            "",
+            "",
+            "Hep Lock see NDC#"
+          ],
+          "line_charge": "10.50",
+          "units": "7"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20040301",
+  "claim_type": "CH"
+}

@@ -1,0 +1,44 @@
+{
+  "source_file": "X222-oxygen.edi",
+  "billing_provider": {
+    "name": "OXYGEN SUPPLY COMPANY",
+    "npi": "9992233334"
+  },
+  "subscriber": {
+    "name": "TERRY SMITH",
+    "id": "111222333A"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "R03996273 #01",
+      "total_billed_amount": "520.24",
+      "place_of_service": "11",
+      "diagnoses": [
+        "496",
+        "51881",
+        "2859"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "E1390",
+          "modifiers": [
+            "RR"
+          ],
+          "line_charge": "461.1",
+          "units": "1"
+        },
+        {
+          "procedure_code": "E0431",
+          "modifiers": [
+            "RR"
+          ],
+          "line_charge": "59.14",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050326",
+  "claim_type": "CH"
+}

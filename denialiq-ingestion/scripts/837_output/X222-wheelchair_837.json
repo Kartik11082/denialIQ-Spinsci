@@ -1,0 +1,37 @@
+{
+  "source_file": "X222-wheelchair.edi",
+  "billing_provider": {
+    "name": "XYZ WHEELCHAIR INC",
+    "npi": "7778889999"
+  },
+  "subscriber": {
+    "name": "JAMES SMITH",
+    "id": "987654321A"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "SMI123",
+      "total_billed_amount": "75",
+      "place_of_service": "12",
+      "diagnoses": [
+        "436",
+        "3449"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "K0001",
+          "modifiers": [
+            "RR",
+            "KH",
+            "BR"
+          ],
+          "line_charge": "75",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050326",
+  "claim_type": "CH"
+}

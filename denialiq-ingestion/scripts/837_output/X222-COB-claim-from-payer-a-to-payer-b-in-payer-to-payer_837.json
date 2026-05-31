@@ -1,0 +1,49 @@
+{
+  "source_file": "X222-COB-claim-from-payer-a-to-payer-b-in-payer-to-payer.edi",
+  "billing_provider": {
+    "name": "BEN KILDARE",
+    "npi": "1999996666"
+  },
+  "subscriber": {
+    "name": "JANE SMITH",
+    "id": "JS00111223333"
+  },
+  "patient": {
+    "name": "TED SMITH"
+  },
+  "claims": [
+    {
+      "claim_submitter_id": "26407789",
+      "total_billed_amount": "79.04",
+      "place_of_service": "11",
+      "diagnoses": [
+        "4779",
+        "2724",
+        "2780",
+        "53081"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "99213",
+          "modifiers": [],
+          "line_charge": "43",
+          "units": "1"
+        },
+        {
+          "procedure_code": "90782",
+          "modifiers": [],
+          "line_charge": "15",
+          "units": "1"
+        },
+        {
+          "procedure_code": "J3301",
+          "modifiers": [],
+          "line_charge": "21.04",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20051015",
+  "claim_type": "CH"
+}

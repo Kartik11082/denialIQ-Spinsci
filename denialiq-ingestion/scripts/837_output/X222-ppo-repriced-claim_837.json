@@ -1,0 +1,43 @@
+{
+  "source_file": "X222-ppo-repriced-claim.edi",
+  "billing_provider": {
+    "name": "HAPPY DOCTORS GROUP PRACTICE",
+    "npi": "1234567890"
+  },
+  "subscriber": {
+    "name": "DIAMOND RING",
+    "id": "00124A089"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "ABC123-RI",
+      "total_billed_amount": "28.75",
+      "place_of_service": "11",
+      "diagnoses": [
+        "496",
+        "25000"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "E0570",
+          "modifiers": [
+            "RR"
+          ],
+          "line_charge": "25",
+          "units": "1"
+        },
+        {
+          "procedure_code": "A7003",
+          "modifiers": [
+            "NU"
+          ],
+          "line_charge": "3.75",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050620",
+  "claim_type": "CH"
+}

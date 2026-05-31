@@ -1,0 +1,36 @@
+{
+  "source_file": "X222-anesthesia.edi",
+  "billing_provider": {
+    "name": "PROVIDER MEDICAL GROUP",
+    "npi": "2366554859"
+  },
+  "subscriber": {
+    "name": "MARGARET JONES",
+    "id": "123456789A"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "153829140",
+      "total_billed_amount": "827",
+      "place_of_service": "22",
+      "diagnoses": [
+        "36616"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "00142",
+          "modifiers": [
+            "QK",
+            "QS",
+            "P1"
+          ],
+          "line_charge": "827",
+          "units": "61"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050117",
+  "claim_type": "CH"
+}

@@ -1,0 +1,90 @@
+{
+    "sender_id": "SUBMITTERS ID",
+    "receiver_id": "RECEIVERS ID",
+    "payer_name": "DELTA DENTAL OF ABC",
+    "provider_name": "BAN DDS LLC",
+    "patient_name": "DOE SALLY",
+    "payment_info": {
+        "total_payment": "132",
+        "payment_method": "CHK",
+        "transaction_date": "20190331"
+    },
+    "claims": [
+        {
+            "claim_id": "7722337",
+            "status_code": "1",
+            "total_charge": "226",
+            "amount_paid": "132",
+            "patient_name": "DOE SALLY",
+            "provider_name": "BAN ERIN",
+            "adjustments": [],
+            "service_lines": [
+                {
+                    "procedure_code": "AD|D0120",
+                    "charge_amount": "46",
+                    "paid_amount": "25",
+                    "date_of_service": "20190324",
+                    "adjustments": [
+                        {
+                            "group": "CO",
+                            "reason_code": "131",
+                            "amount": "21"
+                        }
+                    ]
+                },
+                {
+                    "procedure_code": "AD|D0220",
+                    "charge_amount": "25",
+                    "paid_amount": "14",
+                    "date_of_service": "20190324",
+                    "adjustments": [
+                        {
+                            "group": "CO",
+                            "reason_code": "131",
+                            "amount": "11"
+                        }
+                    ]
+                },
+                {
+                    "procedure_code": "AD|D0230",
+                    "charge_amount": "22",
+                    "paid_amount": "10",
+                    "date_of_service": "20190324",
+                    "adjustments": [
+                        {
+                            "group": "CO",
+                            "reason_code": "131",
+                            "amount": "12"
+                        }
+                    ]
+                },
+                {
+                    "procedure_code": "AD|D0274",
+                    "charge_amount": "60",
+                    "paid_amount": "34",
+                    "date_of_service": "20190324",
+                    "adjustments": [
+                        {
+                            "group": "CO",
+                            "reason_code": "131",
+                            "amount": "26"
+                        }
+                    ]
+                },
+                {
+                    "procedure_code": "AD|D1110",
+                    "charge_amount": "73",
+                    "paid_amount": "49",
+                    "date_of_service": "20190324",
+                    "adjustments": [
+                        {
+                            "group": "CO",
+                            "reason_code": "131",
+                            "amount": "24"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+  "source_file": "X221-dollars-and-data-sent-separate.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "RUSHMORE LIFE",
+  "provider_name": "ACME MEDICAL CENTER",
+  "patient_name": "BUDD WILLIAM",
+  "payment_info": {
+    "total_payment": "1100",
+    "payment_method": "ACH",
+    "transaction_date": "20190316"
+  },
+  "claims": [
+    {
+      "claim_id": "5554555444",
+      "status_code": "1",
+      "total_charge": "800",
+      "amount_paid": "500",
+      "patient_name": "BUDD WILLIAM",
+      "provider_name": null,
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|99211",
+          "charge_amount": "800",
+          "paid_amount": "500",
+          "date_of_service": "20190301",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "1",
+              "amount": "300"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "8765432112",
+      "status_code": "1",
+      "total_charge": "1200",
+      "amount_paid": "600",
+      "patient_name": "SETTLE SUSAN",
+      "provider_name": null,
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|93555",
+          "charge_amount": "1200",
+          "paid_amount": "600",
+          "date_of_service": "20190310",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "1",
+              "amount": "600"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

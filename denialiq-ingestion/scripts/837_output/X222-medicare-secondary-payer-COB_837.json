@@ -1,0 +1,35 @@
+{
+  "source_file": "X222-medicare-secondary-payer-COB.edi",
+  "billing_provider": {
+    "name": "SPECIALISTS",
+    "npi": "0100000009"
+  },
+  "subscriber": {
+    "name": "CAROL MEDYUM",
+    "id": "COM188-404777"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "101KEN6055",
+      "total_billed_amount": "120",
+      "place_of_service": "11",
+      "diagnoses": [
+        "71516",
+        "71906"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "99203",
+          "modifiers": [
+            "25"
+          ],
+          "line_charge": "120",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050214",
+  "claim_type": "CH"
+}

@@ -1,0 +1,66 @@
+{
+  "source_file": "X221-claim-adjustment-reason-code-45.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "ANY PLAN USA",
+  "provider_name": "PROVIDER",
+  "patient_name": "DOE JOHN",
+  "payment_info": {
+    "total_payment": "80.00",
+    "payment_method": "CHK",
+    "transaction_date": "20190816"
+  },
+  "claims": [
+    {
+      "claim_id": "PATACCT",
+      "status_code": "1",
+      "total_charge": "400",
+      "amount_paid": "80",
+      "patient_name": "DOE JOHN",
+      "provider_name": null,
+      "date_of_service": "20190209",
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|99213",
+          "charge_amount": "150",
+          "paid_amount": "80",
+          "date_of_service": "20190101",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "70"
+            }
+          ]
+        },
+        {
+          "procedure_code": "HC|85003",
+          "charge_amount": "100",
+          "paid_amount": "0",
+          "date_of_service": "20190101",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "204",
+              "amount": "100"
+            }
+          ]
+        },
+        {
+          "procedure_code": "HC|36415",
+          "charge_amount": "150",
+          "paid_amount": "0",
+          "date_of_service": "20190101",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "97",
+              "amount": "150"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

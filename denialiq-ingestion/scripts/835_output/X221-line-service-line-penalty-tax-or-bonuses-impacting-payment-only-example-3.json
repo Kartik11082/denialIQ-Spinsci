@@ -1,0 +1,50 @@
+{
+  "source_file": "X221-line-service-line-penalty-tax-or-bonuses-impacting-payment-only-example-3.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "ANY PLAN USA",
+  "provider_name": "PROVIDER",
+  "patient_name": "LAST FIRST",
+  "payment_info": {
+    "total_payment": "8.00",
+    "payment_method": "CHK",
+    "transaction_date": "20190816"
+  },
+  "claims": [
+    {
+      "claim_id": "PCN",
+      "status_code": "1",
+      "total_charge": "25",
+      "amount_paid": "8",
+      "patient_name": "LAST FIRST",
+      "provider_name": "",
+      "date_of_service": "20170113",
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|99214",
+          "charge_amount": "25",
+          "paid_amount": "8",
+          "date_of_service": "20170109",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "5"
+            },
+            {
+              "group": "CO",
+              "reason_code": "B4",
+              "amount": "2"
+            },
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "10"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

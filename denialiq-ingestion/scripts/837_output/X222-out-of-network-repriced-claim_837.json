@@ -1,0 +1,34 @@
+{
+  "source_file": "X222-out-of-network-repriced-claim.edi",
+  "billing_provider": {
+    "name": "EMERGENCY PHYSICIANS GROUP",
+    "npi": "1122334455"
+  },
+  "subscriber": {
+    "name": "TOM SMITH",
+    "id": "23424570"
+  },
+  "patient": {
+    "name": "TOM SMITH"
+  },
+  "claims": [
+    {
+      "claim_submitter_id": "TS234H3",
+      "total_billed_amount": "252.71",
+      "place_of_service": "23",
+      "diagnoses": [
+        "9951"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "99284",
+          "modifiers": [],
+          "line_charge": "252.71",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050711",
+  "claim_type": "CH"
+}

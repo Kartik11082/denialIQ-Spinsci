@@ -1,0 +1,61 @@
+{
+  "source_file": "X222-ambulance.edi",
+  "billing_provider": {
+    "name": "AAA AMBULANCE SERVICE",
+    "npi": "2366554859"
+  },
+  "subscriber": {
+    "name": "SARAH JONES",
+    "id": "012345678A"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "051068",
+      "total_billed_amount": "766.50",
+      "place_of_service": "41",
+      "diagnoses": [
+        "8628",
+        "E8888",
+        "9592",
+        "8540"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "A0427",
+          "modifiers": [
+            "RH"
+          ],
+          "line_charge": "700",
+          "units": "1"
+        },
+        {
+          "procedure_code": "A0425",
+          "modifiers": [
+            "RH"
+          ],
+          "line_charge": "8.20",
+          "units": "21"
+        },
+        {
+          "procedure_code": "A0422",
+          "modifiers": [
+            "RH"
+          ],
+          "line_charge": "46",
+          "units": "1"
+        },
+        {
+          "procedure_code": "A0382",
+          "modifiers": [
+            "RH"
+          ],
+          "line_charge": "12.30",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050208",
+  "claim_type": "CH"
+}

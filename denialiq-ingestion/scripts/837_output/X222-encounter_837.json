@@ -1,0 +1,51 @@
+{
+  "source_file": "X222-encounter.edi",
+  "billing_provider": {
+    "name": "BEN KILDARE SERVICE",
+    "npi": "9876543210"
+  },
+  "subscriber": {
+    "name": "TED SMITH",
+    "id": "00221111"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "26462967",
+      "total_billed_amount": "100",
+      "place_of_service": "11",
+      "diagnoses": [
+        "0340",
+        "V7389"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "99213",
+          "modifiers": [],
+          "line_charge": "40",
+          "units": "1"
+        },
+        {
+          "procedure_code": "87072",
+          "modifiers": [],
+          "line_charge": "15",
+          "units": "1"
+        },
+        {
+          "procedure_code": "99214",
+          "modifiers": [],
+          "line_charge": "35",
+          "units": "1"
+        },
+        {
+          "procedure_code": "86663",
+          "modifiers": [],
+          "line_charge": "10",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20061015",
+  "claim_type": "RP"
+}

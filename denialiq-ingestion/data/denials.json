@@ -1,0 +1,158 @@
+[
+  {
+    "claim_id": "test-99213-1",
+    "patient_name": "DOE JOHN",
+    "date_of_service": "2019-01-01",
+    "payer": "ANY PLAN USA",
+    "plan_type": "CHK",
+    "procedure_code": "99213",
+    "procedure_name": "Office Visit - Established Patient",
+    "diagnosis_code": "",
+    "billed_amount": 70.0,
+    "denial_reason_code": "CO-45",
+    "denial_reason_text": "Charge exceeds fee schedule, maximum allowable, or contracted arrangement",
+    "department": "Evaluation & Management",
+    "provider_name": "PROVIDER",
+    "classification": {
+      "root_cause": "OTHER",
+      "upstream_step": "PAYER_POLICY",
+      "confidence": 0.8,
+      "explanation": "The 835 adjustment reflects a contractual or negotiated discount on the service line. This is usually a payer contract rule rather than a preventable claim workflow failure.",
+      "recommended_fix": "Validate the expected allowed amount against the payer contract and flag only underpayments for follow-up.",
+      "payer_rule": "The payer reduced the submitted charge according to its fee schedule or contracted rate."
+    },
+    "processed_at": "2026-05-31T17:10:43.769543",
+    "status": "CLASSIFIED",
+    "matched_claim_id": "test",
+    "diagnosis_codes": [],
+    "submitted_charge": null,
+    "source": {
+      "format": "835",
+      "source_file": "X221-claim-adjustment-reason-code-45.edi",
+      "sender_id": "SUBMITTERS ID",
+      "receiver_id": "RECEIVERS ID",
+      "payment_info": {
+        "total_payment": "80.00",
+        "payment_method": "CHK",
+        "transaction_date": "20190816"
+      }
+    }
+  },
+  {
+    "claim_id": "test-85003-2",
+    "patient_name": "DOE JOHN",
+    "date_of_service": "2019-01-01",
+    "payer": "ANY PLAN USA",
+    "plan_type": "CHK",
+    "procedure_code": "85003",
+    "procedure_name": "Procedure 85003",
+    "diagnosis_code": "",
+    "billed_amount": 100.0,
+    "denial_reason_code": "CO-204",
+    "denial_reason_text": "Service not covered under the patient's current benefit plan",
+    "department": "Laboratory",
+    "provider_name": "PROVIDER",
+    "classification": {
+      "root_cause": "MEDICAL_NECESSITY",
+      "upstream_step": "PAYER_POLICY",
+      "confidence": 0.8,
+      "explanation": "The denial indicates the billed service is not covered under the current benefit plan. The payer policy check should be reviewed before claim submission or appeal.",
+      "recommended_fix": "Confirm benefit coverage and submit an appeal with supporting documentation if the service meets policy criteria.",
+      "payer_rule": "The payer does not cover this service under the patient's benefit plan unless policy criteria are met."
+    },
+    "processed_at": "2026-05-31T17:10:43.781332",
+    "status": "CLASSIFIED",
+    "matched_claim_id": "test",
+    "diagnosis_codes": [],
+    "submitted_charge": null,
+    "source": {
+      "format": "835",
+      "source_file": "X221-claim-adjustment-reason-code-45.edi",
+      "sender_id": "SUBMITTERS ID",
+      "receiver_id": "RECEIVERS ID",
+      "payment_info": {
+        "total_payment": "80.00",
+        "payment_method": "CHK",
+        "transaction_date": "20190816"
+      }
+    }
+  },
+  {
+    "claim_id": "test-36415-3",
+    "patient_name": "DOE JOHN",
+    "date_of_service": "2019-01-01",
+    "payer": "ANY PLAN USA",
+    "plan_type": "CHK",
+    "procedure_code": "36415",
+    "procedure_name": "Procedure 36415",
+    "diagnosis_code": "",
+    "billed_amount": 150.0,
+    "denial_reason_code": "CO-97",
+    "denial_reason_text": "Benefit included in payment or allowance for another service already adjudicated",
+    "department": "General",
+    "provider_name": "PROVIDER",
+    "classification": {
+      "root_cause": "OTHER",
+      "upstream_step": "PAYER_POLICY",
+      "confidence": 0.85,
+      "explanation": "The 835 adjustment indicates the service allowance is included in another adjudicated service. This is driven by payer bundling policy rather than a missing registration or scheduling step.",
+      "recommended_fix": "Review the related paid service and appeal only if the service should not have been bundled under the payer policy.",
+      "payer_rule": "The payer bundles this service into payment for another related service."
+    },
+    "processed_at": "2026-05-31T17:10:43.791801",
+    "status": "CLASSIFIED",
+    "matched_claim_id": "test",
+    "diagnosis_codes": [],
+    "submitted_charge": null,
+    "source": {
+      "format": "835",
+      "source_file": "X221-claim-adjustment-reason-code-45.edi",
+      "sender_id": "SUBMITTERS ID",
+      "receiver_id": "RECEIVERS ID",
+      "payment_info": {
+        "total_payment": "80.00",
+        "payment_method": "CHK",
+        "transaction_date": "20190816"
+      }
+    }
+  },
+  {
+    "claim_id": "EXAMPLE1-CLAIM-1",
+    "patient_name": "TOWNSEND WILLIAM",
+    "date_of_service": "2019-03-31",
+    "payer": "DELTA DENTAL OF ABC",
+    "plan_type": "CHK",
+    "procedure_code": "",
+    "procedure_name": "Claim-level adjustment",
+    "diagnosis_code": "",
+    "billed_amount": 400.0,
+    "denial_reason_code": "OA-23",
+    "denial_reason_text": "835 adjustment OA-23",
+    "department": "General",
+    "provider_name": "ACME MEDICAL CENTER",
+    "classification": {
+      "root_cause": "CODING_ERROR",
+      "upstream_step": "CODING",
+      "confidence": 0.7,
+      "explanation": "The denial does not match a more specific automated category, so a coding mismatch is the most likely root cause. The coding workflow should review whether the CPT and diagnosis combination supports payment.",
+      "recommended_fix": "Review the medical record and payer policy, then submit a corrected claim with supported CPT, ICD-10, and modifier details.",
+      "payer_rule": "The payer requires submitted diagnosis and procedure codes to support the billed service."
+    },
+    "processed_at": "2026-05-31T17:14:12.127736",
+    "status": "CLASSIFIED",
+    "matched_claim_id": null,
+    "diagnosis_codes": [],
+    "submitted_charge": null,
+    "source": {
+      "format": "835",
+      "source_file": "X221-coordination-of-benefits-example-1a.edi",
+      "sender_id": "SUBMITTERS ID",
+      "receiver_id": "RECEIVERS ID",
+      "payment_info": {
+        "total_payment": "100",
+        "payment_method": "CHK",
+        "transaction_date": "20190331"
+      }
+    }
+  }
+]

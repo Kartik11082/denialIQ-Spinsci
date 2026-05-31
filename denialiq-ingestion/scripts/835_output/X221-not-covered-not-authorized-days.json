@@ -1,0 +1,37 @@
+{
+  "source_file": "X221-not-covered-not-authorized-days.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "ANY PLAN USA",
+  "provider_name": "PROVIDER",
+  "patient_name": "DOE JOHN",
+  "payment_info": {
+    "total_payment": "8000.00",
+    "payment_method": "CHK",
+    "transaction_date": "20190816"
+  },
+  "claims": [
+    {
+      "claim_id": "PATACCT",
+      "status_code": "1",
+      "total_charge": "40000",
+      "amount_paid": "8000",
+      "patient_name": "DOE JOHN",
+      "provider_name": null,
+      "date_of_service": "20190209",
+      "adjustments": [
+        {
+          "group": "CO",
+          "reason_code": "197",
+          "amount": "2000"
+        },
+        {
+          "group": "CO",
+          "reason_code": "45",
+          "amount": "30000"
+        }
+      ],
+      "service_lines": []
+    }
+  ]
+}

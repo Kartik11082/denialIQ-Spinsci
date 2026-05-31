@@ -1,0 +1,32 @@
+{
+  "source_file": "X222-chiropractic.edi",
+  "billing_provider": {
+    "name": "DAVID GREENE",
+    "npi": "1234567890"
+  },
+  "subscriber": {
+    "name": "MATTHEW WILLIAMSON",
+    "id": "123456789A"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "125WILL",
+      "total_billed_amount": "145.5",
+      "place_of_service": "11",
+      "diagnoses": [
+        "7215"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "98940",
+          "modifiers": [],
+          "line_charge": "145.5",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20050215",
+  "claim_type": "CH"
+}

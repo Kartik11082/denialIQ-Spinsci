@@ -1,0 +1,582 @@
+{
+  "source_file": "X221-multiple-claims-single-check.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "DENTAL OF ABC",
+  "provider_name": "BAN DDS LLC",
+  "patient_name": "DOE SANDY",
+  "payment_info": {
+    "total_payment": "810.8",
+    "payment_method": "CHK",
+    "transaction_date": "20190331"
+  },
+  "claims": [
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "226",
+      "amount_paid": "132",
+      "patient_name": "DOE SANDY",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0220",
+          "charge_amount": "25",
+          "paid_amount": "14",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "11"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0230",
+          "charge_amount": "22",
+          "paid_amount": "10",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "12"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0274",
+          "charge_amount": "60",
+          "paid_amount": "34",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "26"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1110",
+          "charge_amount": "73",
+          "paid_amount": "49",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "119",
+      "amount_paid": "74",
+      "patient_name": "DOE SALLY",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1110",
+          "charge_amount": "73",
+          "paid_amount": "49",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "226",
+      "amount_paid": "108",
+      "patient_name": "SMITH SALLY",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0220",
+          "charge_amount": "25",
+          "paid_amount": "0",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "14"
+            },
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "11"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0230",
+          "charge_amount": "22",
+          "paid_amount": "0",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "10"
+            },
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "12"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0274",
+          "charge_amount": "60",
+          "paid_amount": "34",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "26"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1110",
+          "charge_amount": "73",
+          "paid_amount": "49",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "1145",
+      "amount_paid": "14",
+      "patient_name": "SMITH SAM",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0220",
+          "charge_amount": "25",
+          "paid_amount": "14",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "11"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D2790",
+          "charge_amount": "940",
+          "paid_amount": "0",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "756"
+            },
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "184"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D2950",
+          "charge_amount": "180",
+          "paid_amount": "0",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "146"
+            },
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "34"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "348",
+      "amount_paid": "16.8",
+      "patient_name": "JONES SAM",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D4342",
+          "charge_amount": "125",
+          "paid_amount": "0",
+          "date_of_service": "20190313",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "125"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D4381",
+          "charge_amount": "43",
+          "paid_amount": "0",
+          "date_of_service": "20190313",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "33"
+            },
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "10"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D2950",
+          "charge_amount": "180",
+          "paid_amount": "16.8",
+          "date_of_service": "20190313",
+          "adjustments": [
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "11.2"
+            },
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "152"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "226",
+      "amount_paid": "132",
+      "patient_name": "JONES SALLY",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190321",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0220",
+          "charge_amount": "25",
+          "paid_amount": "14",
+          "date_of_service": "20190321",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "11"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0230",
+          "charge_amount": "22",
+          "paid_amount": "10",
+          "date_of_service": "20190321",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "12"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0274",
+          "charge_amount": "60",
+          "paid_amount": "34",
+          "date_of_service": "20190321",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "26"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1110",
+          "charge_amount": "73",
+          "paid_amount": "49",
+          "date_of_service": "20190321",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "179",
+      "amount_paid": "108",
+      "patient_name": "DOE SAM",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0274",
+          "charge_amount": "60",
+          "paid_amount": "34",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "26"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1110",
+          "charge_amount": "73",
+          "paid_amount": "49",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "129",
+      "amount_paid": "82",
+      "patient_name": "DOE SUE",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1120",
+          "charge_amount": "54",
+          "paid_amount": "37",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "17"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1208",
+          "charge_amount": "29",
+          "paid_amount": "20",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "7722337",
+      "status_code": "1",
+      "total_charge": "221",
+      "amount_paid": "144",
+      "patient_name": "DOE DONNA",
+      "provider_name": "BAN ERIN",
+      "date_of_service": null,
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "AD|D0120",
+          "charge_amount": "46",
+          "paid_amount": "25",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "21"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D0330",
+          "charge_amount": "92",
+          "paid_amount": "62",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "30"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1120",
+          "charge_amount": "54",
+          "paid_amount": "37",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "17"
+            }
+          ]
+        },
+        {
+          "procedure_code": "AD|D1208",
+          "charge_amount": "29",
+          "paid_amount": "20",
+          "date_of_service": "20190324",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "9"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source_file": "X221-correcting-the-subscriber-example-2.edi",
+  "sender_id": "SUBMITTERS ID",
+  "receiver_id": "RECEIVERS ID",
+  "payer_name": "ANY PLAN USA",
+  "provider_name": "PROVIDER",
+  "patient_name": "KEATON ALEX",
+  "payment_info": {
+    "total_payment": "35.06",
+    "payment_method": "CHK",
+    "transaction_date": "20190816"
+  },
+  "claims": [
+    {
+      "claim_id": "02333TLC222222",
+      "status_code": "1",
+      "total_charge": "115",
+      "amount_paid": "35.06",
+      "patient_name": "KEATON ALEX",
+      "provider_name": "BLOOD MD RED N",
+      "date_of_service": "20191119",
+      "adjustments": [],
+      "service_lines": [
+        {
+          "procedure_code": "HC|99213",
+          "charge_amount": "115",
+          "paid_amount": "35.06",
+          "date_of_service": "20191113",
+          "adjustments": [
+            {
+              "group": "CO",
+              "reason_code": "45",
+              "amount": "44.94"
+            },
+            {
+              "group": "PR",
+              "reason_code": "3",
+              "amount": "35"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

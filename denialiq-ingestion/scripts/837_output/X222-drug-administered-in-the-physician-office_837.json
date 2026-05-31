@@ -1,0 +1,38 @@
+{
+  "source_file": "X222-drug-administered-in-the-physician-office.edi",
+  "billing_provider": {
+    "name": "Associates in Medicine",
+    "npi": "1234567893"
+  },
+  "subscriber": {
+    "name": "Steve Vaughn",
+    "id": "MBRID12345"
+  },
+  "patient": {},
+  "claims": [
+    {
+      "claim_submitter_id": "CLMNO12345",
+      "total_billed_amount": "103.37",
+      "place_of_service": "11",
+      "diagnoses": [
+        "03591"
+      ],
+      "service_lines": [
+        {
+          "procedure_code": "90782",
+          "modifiers": [],
+          "line_charge": "50",
+          "units": "1"
+        },
+        {
+          "procedure_code": "J1550",
+          "modifiers": [],
+          "line_charge": "53.37",
+          "units": "1"
+        }
+      ]
+    }
+  ],
+  "transaction_date": "20040801",
+  "claim_type": "CH"
+}

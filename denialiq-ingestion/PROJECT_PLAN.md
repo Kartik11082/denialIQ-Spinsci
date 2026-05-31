@@ -144,6 +144,55 @@ Pattern detection turns that into:
 This is the main value of the project.
 Instead of only seeing individual denials, users can see repeated operational problems.
 
+## How LLM Interpretation Will Be Used
+
+The LLM should not calculate numbers or decide matches.
+Those parts should stay deterministic in code.
+
+Code should handle:
+
+```text
+parsing
+matching
+denial detection
+grouping
+counting
+revenue totals
+pattern ranking
+```
+
+The LLM should only explain the results using the context we already calculated.
+
+Main uses:
+
+```text
+explain one denial in plain language
+explain why a pattern matters
+summarize dashboard metrics
+suggest a simple next action
+```
+
+Example pattern explanation:
+
+```text
+The system finds: ANY PLAN USA has 12 CO-45 denials for CPT 99213.
+
+The LLM explains: This looks like a repeated payer contract or fee schedule issue.
+The next step is to review the allowed rate for CPT 99213 with this payer.
+```
+
+Example dashboard summary:
+
+```text
+The system calculates total denials, revenue at risk, top payer, and top root cause.
+
+The LLM explains: Most denial risk is concentrated with one payer and one repeated
+root cause, so that area should be reviewed first.
+```
+
+This keeps DenialIQ from becoming a chatbot.
+The product should feel like the system already analyzed the data and explains what matters.
+
 ## What The System Produces
 
 The system should produce clean denial records.

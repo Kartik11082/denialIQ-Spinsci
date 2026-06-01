@@ -3,7 +3,6 @@ from datetime import datetime
 
 from app.models import RawDenialInput
 
-
 DENIAL_CODE_NAMES = {
     "CO-4": "Service not covered",
     "CO-11": "Diagnosis inconsistent with procedure",
@@ -53,9 +52,8 @@ def parse_denial(raw: RawDenialInput) -> dict:
         or PROCEDURE_NAMES.get(procedure_code)
         or f"Procedure {procedure_code}"
     )
-    denial["department"] = (
-        raw.department.strip()
-        or DEPARTMENT_BY_PREFIX.get(procedure_code[:1], "General")
+    denial["department"] = raw.department.strip() or DEPARTMENT_BY_PREFIX.get(
+        procedure_code[:1], "General"
     )
     denial["processed_at"] = datetime.now().isoformat()
 

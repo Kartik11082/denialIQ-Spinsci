@@ -23,10 +23,10 @@ from pydantic import ValidationError
 from app import claim_storage, classifier, edi835, edi837, matcher, parser, storage
 from app.models import APIResponse, ProcessedDenial, RawDenialInput
 
-
 # ---------------------------------------------------------------------------
 # App setup
 # ---------------------------------------------------------------------------
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -50,6 +50,7 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _error(message: str, status_code: int = 400) -> JSONResponse:
     """Return a standard error response."""
@@ -78,6 +79,7 @@ def _is_835_shaped(payload: dict) -> bool:
 # ---------------------------------------------------------------------------
 # Core processing pipeline
 # ---------------------------------------------------------------------------
+
 
 def _build_denial_record(raw: RawDenialInput, source_meta: dict) -> dict:
     """Process a single denial through the full pipeline.
@@ -123,7 +125,9 @@ def _ingest_835(parsed_835: dict, source_file: str) -> APIResponse | JSONRespons
     Each service-line adjustment becomes its own denial record.  The matcher
     tries to link each one back to a stored 837 submitted claim.
     """
-    raw_denials = edi835.raw_denials_from_parsed_835(parsed_835, source_file=source_file)
+    raw_denials = edi835.raw_denials_from_parsed_835(
+        parsed_835, source_file=source_file
+    )
     if not raw_denials:
         return _error("No claim adjustments found in parsed 835 payload")
 
@@ -160,17 +164,25 @@ def _ingest_835(parsed_835: dict, source_file: str) -> APIResponse | JSONRespons
 # Exception handler
 # ---------------------------------------------------------------------------
 
+
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request, exc: RequestValidationError) -> JSONResponse:
+async def validation_exception_handler(
+    request, exc: RequestValidationError
+) -> JSONResponse:
     first = exc.errors()[0] if exc.errors() else {}
     field = first.get("loc", ["input"])[-1]
-    msg = f"{field} is required" if first.get("type") == "missing" else first.get("msg", "Invalid request")
+    msg = (
+        f"{field} is required"
+        if first.get("type") == "missing"
+        else first.get("msg", "Invalid request")
+    )
     return _error(msg)
 
 
 # ---------------------------------------------------------------------------
 # Routes: health check
 # ---------------------------------------------------------------------------
+
 
 @app.get("/")
 def service_info() -> dict:
@@ -185,6 +197,7 @@ def service_info() -> dict:
 # Routes: ingestion
 # ---------------------------------------------------------------------------
 
+
 @app.post("/ingest", response_model=APIResponse)
 def ingest(payload: dict = Body(...)) -> APIResponse | JSONResponse:
     """Ingest a single manual denial or a full parsed 835 payload.
@@ -195,7 +208,9 @@ def ingest(payload: dict = Body(...)) -> APIResponse | JSONResponse:
     try:
         # Auto-detect 835 payloads
         if _is_835_shaped(payload):
-            return _ingest_835(payload, source_file=payload.get("source_file", "request body"))
+            return _ingest_835(
+                payload, source_file=payload.get("source_file", "request body")
+            )
 
         # Single manual denial
         try:
@@ -207,10 +222,14 @@ def ingest(payload: dict = Body(...)) -> APIResponse | JSONResponse:
         if not is_valid:
             return _error(error_message)
 
-        record = _build_denial_record(raw, {"format": "manual", "source_file": "request body"})
+        record = _build_denial_record(
+            raw, {"format": "manual", "source_file": "request body"}
+        )
         storage.save_denial(record)
 
-        return APIResponse(success=True, message="Denial ingested and classified", data=record)
+        return APIResponse(
+            success=True, message="Denial ingested and classified", data=record
+        )
     except Exception as error:
         return APIResponse(success=False, message=str(error))
 
@@ -226,7 +245,9 @@ def ingest_837(
     Re-ingesting the same file replaces existing records (safe to re-run).
     """
     try:
-        claims = edi837.submitted_claims_from_parsed_837(payload, source_file=source_file)
+        claims = edi837.submitted_claims_from_parsed_837(
+            payload, source_file=source_file
+        )
         if not claims:
             return _error("No claims found in parsed 837 payload")
 
@@ -258,11 +279,15 @@ def ingest_835(
     """
     try:
         if payload is not None:
-            return _ingest_835(payload, source_file=payload.get("source_file", "request body"))
+            return _ingest_835(
+                payload, source_file=payload.get("source_file", "request body")
+            )
 
         file_path = edi835.resolve_project_path(parsed_file)
         parsed_835 = edi835.load_parsed_835(parsed_file)
-        return _ingest_835(parsed_835, source_file=str(file_path.relative_to(edi835.PROJECT_ROOT)))
+        return _ingest_835(
+            parsed_835, source_file=str(file_path.relative_to(edi835.PROJECT_ROOT))
+        )
     except Exception as error:
         return _error(str(error))
 
@@ -270,6 +295,7 @@ def ingest_835(
 # ---------------------------------------------------------------------------
 # Routes: read claims (837)
 # ---------------------------------------------------------------------------
+
 
 @app.get("/claims", response_model=APIResponse)
 def list_claims(
@@ -282,7 +308,9 @@ def list_claims(
     if payer:
         records = [r for r in records if r.get("payer", "").lower() == payer.lower()]
 
-    return APIResponse(success=True, message="Submitted claims retrieved", data=records[:limit])
+    return APIResponse(
+        success=True, message="Submitted claims retrieved", data=records[:limit]
+    )
 
 
 @app.get("/claims/{claim_id}", response_model=APIResponse)
@@ -296,7 +324,9 @@ def get_claim(claim_id: str) -> APIResponse | JSONResponse:
         )
 
     # Find all denials that were matched back to this claim
-    matched_denials = [r for r in storage.load_all() if r.get("matched_claim_id") == claim_id]
+    matched_denials = [
+        r for r in storage.load_all() if r.get("matched_claim_id") == claim_id
+    ]
 
     return APIResponse(
         success=True,
@@ -311,6 +341,7 @@ def get_claim(claim_id: str) -> APIResponse | JSONResponse:
 # ---------------------------------------------------------------------------
 # Routes: read denials (835)
 # ---------------------------------------------------------------------------
+
 
 @app.get("/denials", response_model=APIResponse)
 def list_denials(
@@ -333,8 +364,10 @@ def list_denials(
 
     if root_cause:
         records = [
-            r for r in records
-            if r.get("classification", {}).get("root_cause", "").lower() == root_cause.lower()
+            r
+            for r in records
+            if r.get("classification", {}).get("root_cause", "").lower()
+            == root_cause.lower()
         ]
 
     if matched is True:
@@ -361,6 +394,7 @@ def get_denial(claim_id: str) -> APIResponse | JSONResponse:
 # Routes: stats
 # ---------------------------------------------------------------------------
 
+
 @app.get("/stats", response_model=APIResponse)
 def get_stats() -> APIResponse:
     """Return aggregate statistics across all claims and denials."""
@@ -372,6 +406,7 @@ def get_stats() -> APIResponse:
 # ---------------------------------------------------------------------------
 # Routes: reset
 # ---------------------------------------------------------------------------
+
 
 @app.delete("/reset", response_model=APIResponse)
 def reset(claims: bool = False) -> APIResponse:

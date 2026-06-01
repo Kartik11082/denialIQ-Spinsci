@@ -7,7 +7,9 @@ def _normalize(code: str) -> str:
     return normalize_procedure_code(code).upper()
 
 
-def find_matching_claim(denial_claim_id: str, denial_procedure_code: str) -> dict | None:
+def find_matching_claim(
+    denial_claim_id: str, denial_procedure_code: str
+) -> dict | None:
     """Find the submitted 837 claim and service line that match a denial.
 
     Matching is a two-step process:

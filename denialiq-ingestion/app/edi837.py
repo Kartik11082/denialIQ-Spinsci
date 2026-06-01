@@ -3,7 +3,6 @@ from pathlib import Path
 
 from app.edi835 import convert_835_date
 
-
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Procedure-code prefixes that appear in 837 CLM/SV1 segments
@@ -33,6 +32,7 @@ def normalize_procedure_code(code: str) -> str:
 # priority order; the first non-empty value wins.
 # ---------------------------------------------------------------------------
 
+
 def _first(*values) -> str:
     """Return the first truthy string value, or empty string."""
     for v in values:
@@ -56,7 +56,7 @@ def _resolve_claim_id(claim: dict) -> str:
     """Return the claim ID from whichever field name the parser used."""
     return _first(
         claim.get("claim_id"),
-        claim.get("claim_submitter_id"),   # common in professional 837 parsers
+        claim.get("claim_submitter_id"),  # common in professional 837 parsers
         claim.get("submitter_claim_id"),
         claim.get("patient_control_number"),
         claim.get("id"),
@@ -72,7 +72,9 @@ def _resolve_diagnosis_codes(claim: dict) -> list[str]:
     return []
 
 
-def _extract_service_lines(raw_lines: list[dict], claim_level_dx: list[str]) -> list[dict]:
+def _extract_service_lines(
+    raw_lines: list[dict], claim_level_dx: list[str]
+) -> list[dict]:
     """Convert raw parsed 837 service lines into the clean internal format.
 
     Accepts multiple field-name aliases so the function is resilient to
@@ -84,14 +86,16 @@ def _extract_service_lines(raw_lines: list[dict], claim_level_dx: list[str]) -> 
     lines = []
     for line in raw_lines:
         procedure_code = normalize_procedure_code(
-            _first(line.get("procedure_code"), line.get("cpt_code"), line.get("hcpcs_code"))
+            _first(
+                line.get("procedure_code"), line.get("cpt_code"), line.get("hcpcs_code")
+            )
         )
         if not procedure_code:
             continue
 
         charge_amount = _first_float(
             line.get("charge_amount"),
-            line.get("line_charge"),       # ambulance / HCFA parsers often use this
+            line.get("line_charge"),  # ambulance / HCFA parsers often use this
             line.get("billed_amount"),
             line.get("submitted_amount"),
             default=0.0,
@@ -123,7 +127,14 @@ def _extract_service_lines(raw_lines: list[dict], claim_level_dx: list[str]) -> 
 def _resolve_patient_name(parsed_837: dict, claim: dict) -> str:
     """Return the patient name from whichever location the parser put it."""
     # 1. Claim-level patient name
-    name = _first(claim.get("patient_name"), claim.get("patient", {}).get("name") if isinstance(claim.get("patient"), dict) else "")
+    name = _first(
+        claim.get("patient_name"),
+        (
+            claim.get("patient", {}).get("name")
+            if isinstance(claim.get("patient"), dict)
+            else ""
+        ),
+    )
     if name:
         return name
 
@@ -218,7 +229,7 @@ def submitted_claims_from_parsed_837(
 
         total_charge = _first_float(
             claim.get("total_charge"),
-            claim.get("total_billed_amount"),   # common alias
+            claim.get("total_billed_amount"),  # common alias
             claim.get("billed_amount"),
             claim.get("clm_amount"),
             default=0.0,

@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "denials.json"
 
 
@@ -58,7 +57,9 @@ def get_stats() -> dict:
 
     stats: dict[str, Any] = {
         "total_denials": total,
-        "total_revenue_at_risk": sum(record.get("billed_amount", 0.0) for record in records),
+        "total_revenue_at_risk": sum(
+            record.get("billed_amount", 0.0) for record in records
+        ),
         "matched_denials": len(matched),
         "unmatched_denials": len(unmatched),
         "match_rate": round(len(matched) / total, 4) if total else 0.0,
@@ -75,11 +76,15 @@ def get_stats() -> dict:
         payer = record.get("payer", "UNKNOWN")
         department = record.get("department", "UNKNOWN")
 
-        stats["by_root_cause"][root_cause] = stats["by_root_cause"].get(root_cause, 0) + 1
+        stats["by_root_cause"][root_cause] = (
+            stats["by_root_cause"].get(root_cause, 0) + 1
+        )
         stats["by_payer"][payer] = stats["by_payer"].get(payer, 0) + 1
         stats["by_upstream_step"][upstream_step] = (
             stats["by_upstream_step"].get(upstream_step, 0) + 1
         )
-        stats["by_department"][department] = stats["by_department"].get(department, 0) + 1
+        stats["by_department"][department] = (
+            stats["by_department"].get(department, 0) + 1
+        )
 
     return stats

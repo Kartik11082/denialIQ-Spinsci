@@ -10,7 +10,6 @@ is the single place to swap in the LLM call.
 
 from app.models import ClassificationResult
 
-
 # ---------------------------------------------------------------------------
 # Classification rules
 #

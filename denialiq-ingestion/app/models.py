@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field
 
 class RawDenialInput(BaseModel):
     """Raw denial data as received from the API or extracted from an 835."""
+
     claim_id: str
     patient_name: str = "Anonymous"
     date_of_service: str = ""
@@ -33,16 +34,18 @@ class RawDenialInput(BaseModel):
 
 class ClassificationResult(BaseModel):
     """Root-cause classification produced by the classifier."""
-    root_cause: str           # e.g. MISSING_PRIOR_AUTH, CODING_ERROR
-    upstream_step: str        # e.g. SCHEDULING, CODING, REGISTRATION
-    confidence: float         # 0.0 – 1.0
-    explanation: str          # human-readable reason
-    recommended_fix: str      # actionable next step
-    payer_rule: str           # which payer rule applies
+
+    root_cause: str  # e.g. MISSING_PRIOR_AUTH, CODING_ERROR
+    upstream_step: str  # e.g. SCHEDULING, CODING, REGISTRATION
+    confidence: float  # 0.0 – 1.0
+    explanation: str  # human-readable reason
+    recommended_fix: str  # actionable next step
+    payer_rule: str  # which payer rule applies
 
 
 class ProcessedDenial(BaseModel):
     """A fully processed denial record ready for storage."""
+
     claim_id: str
     patient_name: str
     date_of_service: str
@@ -68,6 +71,7 @@ class ProcessedDenial(BaseModel):
 
 class APIResponse(BaseModel):
     """Standard envelope for every API response."""
+
     success: bool
     message: str
     data: Optional[Any] = None
